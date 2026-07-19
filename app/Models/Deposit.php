@@ -1,0 +1,62 @@
+<?php
+
+namespace Models;
+
+use Core\Database;
+use PDO;
+
+class Deposit
+{
+    private PDO $db;
+
+        public function __construct()
+            {
+                    $this->db = Database::connection();
+                        }
+
+                            public function create(array $data)
+                                {
+                                        $stmt = $this->db->prepare("
+                                                    INSERT INTO deposits
+                                                                (
+                                                                                sid,
+                                                                                                reference,
+                                                                                                                account_number,
+                                                                                                                                bank_name,
+                                                                                                                                                amount,
+                                                                                                                                                                provider,
+                                                                                                                                                                                status,
+                                                                                                                                                                                                payment_reference
+                                                                                                                                                                                                            )
+                                                                                                                                                                                                                        VALUES
+                                                                                                                                                                                                                                    (
+                                                                                                                                                                                                                                                    ?,?,?,?,?,?,?,?
+                                                                                                                                                                                                                                                                )
+                                                                                                                                                                                                                                                                        ");
+
+                                                                                                                                                                                                                                                                                return $stmt->execute([
+                                                                                                                                                                                                                                                                                            $data['sid'],
+                                                                                                                                                                                                                                                                                                        $data['reference'],
+                                                                                                                                                                                                                                                                                                                    $data['account_number'],
+                                                                                                                                                                                                                                                                                                                                $data['bank_name'],
+                                                                                                                                                                                                                                                                                                                                            $data['amount'],
+                                                                                                                                                                                                                                                                                                                                                        $data['provider'],
+                                                                                                                                                                                                                                                                                                                                                                    $data['status'],
+                                                                                                                                                                                                                                                                                                                                                                                $data['payment_reference']
+                                                                                                                                                                                                                                                                                                                                                                                        ]);
+                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                                public function history(int $sid)
+                                                                                                                                                                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                                                                                                                                                                            $stmt = $this->db->prepare("
+                                                                                                                                                                                                                                                                                                                                                                                                                        SELECT *
+                                                                                                                                                                                                                                                                                                                                                                                                                                    FROM deposits
+                                                                                                                                                                                                                                                                                                                                                                                                                                                WHERE sid=?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            ORDER BY id DESC
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ");
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            $stmt->execute([$sid]);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    return $stmt->fetchAll();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
