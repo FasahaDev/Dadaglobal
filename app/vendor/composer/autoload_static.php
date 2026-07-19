@@ -21,12 +21,22 @@ class ComposerStaticInit9cb56c9209e8013d3bd4938236e544c7
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Services\\' => 9,
         ),
         'P' =>
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'PhpOption\\' => 10,
+        ),
+        'M' =>
+        array (
+            'Models\\' => 7,
+            'Middleware\\' => 11,
+        ),
+        'H' =>
+        array (
+            'Helpers\\' => 8,
         ),
         'G' =>
         array (
@@ -43,6 +53,11 @@ class ComposerStaticInit9cb56c9209e8013d3bd4938236e544c7
         array (
             'Dotenv\\' => 7,
         ),
+        'C' =>
+        array (
+            'Core\\' => 5,
+            'Controllers\\' => 12,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -58,6 +73,10 @@ class ComposerStaticInit9cb56c9209e8013d3bd4938236e544c7
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Services\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/Services',
+        ),
         'Psr\\Http\\Message\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
@@ -70,6 +89,18 @@ class ComposerStaticInit9cb56c9209e8013d3bd4938236e544c7
         'PhpOption\\' =>
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Models\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/Models',
+        ),
+        'Middleware\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/Middleware',
+        ),
+        'Helpers\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/Helpers',
         ),
         'GuzzleHttp\\Psr7\\' =>
         array (
@@ -94,6 +125,14 @@ class ComposerStaticInit9cb56c9209e8013d3bd4938236e544c7
         'Dotenv\\' =>
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'Core\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/Core',
+        ),
+        'Controllers\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/Controllers',
         ),
     );
 

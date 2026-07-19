@@ -12,6 +12,7 @@ $router = new Router();
 
 $router->post('/api/register', ['AuthController', 'register']);
 $router->post('/api/login', ['AuthController', 'login']);
+$router->get('/test', ['AuthController', 'profile']);
 
 /*
 |--------------------------------------------------------------------------

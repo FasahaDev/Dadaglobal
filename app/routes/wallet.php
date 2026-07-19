@@ -13,4 +13,14 @@ $router->get(
             ['DepositController','account']
             );
 
+ $router->get(
+        '/api/banks',
+            ['WithdrawController','banks']
+            );
+
+            $router->post(
+                '/api/withdraw',
+                    ['WithdrawController','request']
+                    ); 
+
 return $router;

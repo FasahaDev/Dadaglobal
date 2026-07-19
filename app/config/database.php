@@ -4,16 +4,16 @@ return [
 
     'driver' => $_ENV['DB_CONNECTION'] ?? 'mysql',
 
-        'host' => $_ENV['DB_HOST'],
+            'host' => $_ENV['DB_HOST'],
 
-            'port' => $_ENV['DB_PORT'],
+                        'port' => $_ENV['DB_PORT'],
 
-                'database' => $_ENV['DB_DATABASE'],
+                                        'database' => $_ENV['DB_DATABASE'],
 
-                    'username' => $_ENV['DB_USERNAME'],
+                                                            'username' => $_ENV['DB_USERNAME'],
 
-                        'password' => $_ENV['DB_PASSWORD'],
+                                                                                    'password' => $_ENV['DB_PASSWORD'],
 
-                            'charset' => 'utf8mb4',
+                                                                                                                'charset' => 'utf8mb4',
 
-                            ];
+                                                                                                                                            ];
